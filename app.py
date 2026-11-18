@@ -5,18 +5,19 @@ import numpy as np
 import plotly.express as px
 import os
 
-st.set_page_config(
-    page_title="Earthquake Forecasting Dashboard",
-    page_icon="🌍",
-    layout="wide"
-)
+# Project directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
- DATA = os.path.dirname(os.path.abspath(__file__))
+# CSV files are stored in the root directory
+DATA = BASE_DIR
+
 
 def load_csv(filename):
     path = os.path.join(DATA, filename)
+
     if os.path.exists(path):
         return pd.read_csv(path)
+
     return None
 
 historical = load_csv("historical.csv")
