@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-DATA = "data"
+ DATA = os.path.dirname(os.path.abspath(__file__))
 
 def load_csv(filename):
     path = os.path.join(DATA, filename)
